@@ -4,30 +4,18 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+
 
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.springframework.beans.factory.annotation.Autowired;
 import ru.cb.interfaces.ExecOpenYa;
-import ru.cb.interfaces.OpemYaMarket;
 import ru.cb.servisec.ExecOpenYaImpl;
 
-
-import java.util.ArrayList;
 import java.util.List;
 
 
 public class YaMarketTest {
-
-    String text1;
-
-    String text2;
-
-    String temp;
 
     WebDriver driver;
 
