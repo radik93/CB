@@ -27,6 +27,7 @@ public class YaMarketTest {
         execOpenYa = new ExecOpenYaImpl();
     }
 
+    //тест для Edge
     @Test
     public void iniEdgeDriver() throws InterruptedException {
 
@@ -37,6 +38,7 @@ public class YaMarketTest {
       firstTest(execOpenYa.getTwoText(driver));
     }
 
+    //тест для Firefox
     @Test
     public void iniFirefoxOptions() throws InterruptedException {
 
