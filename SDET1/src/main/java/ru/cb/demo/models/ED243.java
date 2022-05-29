@@ -25,11 +25,11 @@ public class ED243 {
     @Column(name = "requestCode")
     private int requestCode;
 
-   @OneToOne(mappedBy = "ed244")
-    private ED244 ed244;
+ //  @OneToOne(mappedBy = "ed244")
+ //   private ED244 ed244;
 
-    @OneToMany(targetEntity=ED201.class,
-            fetch = FetchType.EAGER)
-    @JoinColumn(name="edReceiver")
-    private List<ED201> ed201s;
+   // @OneToMany(targetEntity= ED201.class,
+   //         fetch = FetchType.EAGER)
+   // @JoinColumn(name="edReceiver")
+   // private List<ED201> ed201s;
 }

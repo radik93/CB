@@ -27,7 +27,7 @@ public class ED244 {
     @Column(name = "ackCode")
     private int ackCode;
 
-    @OneToOne(cascade = {CascadeType.ALL})
-    @JoinColumn(name = "requestCode")
-    private ED243 ed243;
+   // @OneToOne(cascade = {CascadeType.ALL})
+   // @JoinColumn(name = "requestCode")
+   // private ED243 ed243;
 }

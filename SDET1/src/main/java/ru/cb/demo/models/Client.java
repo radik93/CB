@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Setter
 @Table(name="clients")
 @Entity
-public class Clients {
+public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -24,4 +24,13 @@ public class Clients {
       private int PS;
       @Column(name = "BIK")
       private int BIK;
+      @Column(name = "edReceiver")
+      private int edReceiver;
+
+      public Client(String name, int INN, int PS, int BIK, int edReceiver) {
+          this.name = name;
+          this.INN = INN;
+          this.BIK=BIK;
+          this.edReceiver=edReceiver;
+      }
 }

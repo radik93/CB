@@ -23,10 +23,14 @@ public class ED201 {
     @Column(name = "ctrlCode")
     private int ctrlCode;
 
-    @Column(name = "isRelevant")
-    private int isRelevant;
+   // @Column(name = "isRelevant")
+   // private int isRelevant;
 
-    @ManyToOne(targetEntity=ED243.class)
-    @JoinColumn(name="ed243_id")
-    ED243 ed243;
+    public ED201(int edDate, int ctrlCode) {
+
+    }
+
+    //@ManyToOne(targetEntity=ED243.class)
+    //@JoinColumn(name="ed243_id")
+    //ED243 ed243;
 }
