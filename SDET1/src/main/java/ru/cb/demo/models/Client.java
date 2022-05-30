@@ -33,4 +33,8 @@ public class Client {
           this.BIK=BIK;
           this.edReceiver=edReceiver;
       }
+
+      public Client() {
+
+      }
 }

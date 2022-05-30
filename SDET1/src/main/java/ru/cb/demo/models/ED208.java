@@ -17,10 +17,17 @@ public class ED208 {
 
     @Column(name = "edDate")
     private int edDate;
-  //  @Column(name = "edAuthor")
-  //  private int edAuthor;
-  //  @Column(name = "edReceiver")
-  //  private int edReceiver;
+    @Column(name = "edAuthor")
+    private int edAuthor;
+    @Column(name = "edReceiver")
+    private int edReceiver;
     @Column(name = "resultCode")
     private int ctrlCode;
+
+    public ED208(int edDate, int ctrlCode, ED243 ed243) {
+        this.edDate = edDate;
+        this.ctrlCode=ctrlCode;
+        this.edAuthor=ed243.getEdAuthor();
+        this.edReceiver=ed243.getEdReceiver();
+    }
 }

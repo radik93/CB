@@ -51,7 +51,7 @@ class DemoApplicationTests {
     public void grateClient() {
         client1=new Client(comName1,INN1,PS1,BIK1,edReceiver1);
 
-        client1=new Client(comName2,INN2,PS2,BIK2,edReceiver2);
+        client2=new Client(comName2,INN2,PS2,BIK2,edReceiver2);
 
     }
 
@@ -65,7 +65,6 @@ class DemoApplicationTests {
     @Test
     public void sendУВ243() {
         ED201 ed201=vcControl.performСontrol(ed243);
-
     }
 
 

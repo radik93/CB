@@ -25,6 +25,13 @@ public class ED243 {
     @Column(name = "requestCode")
     private int requestCode;
 
+    public ED243(int edDate, int edAuthor, int edReceiver, int requestCode) {
+        this.edDate = edDate;
+        this.edAuthor=edAuthor;
+        this.edReceiver=edReceiver;
+        this.requestCode=requestCode;
+    }
+
  //  @OneToOne(mappedBy = "ed244")
  //   private ED244 ed244;
 

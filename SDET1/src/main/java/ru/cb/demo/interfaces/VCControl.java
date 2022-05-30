@@ -6,5 +6,5 @@ import ru.cb.demo.models.ED243;
 
 public interface VCControl {
     ED201 performСontrol(ED243 ed243);
-    ED208 successСontrol(ED243 ed243);
+    ED208 successСontrol(ED243 ed243, boolean delivered);
 }
