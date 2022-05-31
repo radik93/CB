@@ -25,18 +25,18 @@ public class ED243 {
     @Column(name = "requestCode")
     private int requestCode;
 
-    public ED243(int edDate, int edAuthor, int edReceiver, int requestCode) {
-        this.edDate = edDate;
-        this.edAuthor=edAuthor;
-        this.edReceiver=edReceiver;
-        this.requestCode=requestCode;
+    @Column(name = "anAnswer")
+    private boolean anAnswer;
+
+    public ED243(int edDate, int edAuthor, int edReceiver, int requestCode, boolean AnAnswer) {
+        this.edDate      = edDate;
+        this.edAuthor    = edAuthor;
+        this.edReceiver  = edReceiver;
+        this.requestCode = requestCode;
+        this.anAnswer  =   anAnswer;
     }
 
- //  @OneToOne(mappedBy = "ed244")
- //   private ED244 ed244;
+    public ED243() {
 
-   // @OneToMany(targetEntity= ED201.class,
-   //         fetch = FetchType.EAGER)
-   // @JoinColumn(name="edReceiver")
-   // private List<ED201> ed201s;
+    }
 }

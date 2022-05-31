@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import ru.cb.demo.interfaces.VCControl;
+import ru.cb.demo.interfaces.grud.ED243ModelRepositoris;
 import ru.cb.demo.models.ED201;
 import ru.cb.demo.models.ED208;
 import ru.cb.demo.models.ED243;
@@ -20,19 +21,19 @@ class SendED243 {
 
     int edReceiver1  = 654;
 
-    int edReceiver2  = 659;
 
     int edAuthor1  = 659;
 
-    int edAuthor2  = 654;
-
-    boolean delivered;
+    boolean delivered=false;
 
     @Autowired
     VCControl vcControl;
 
+    @Autowired
+    ED243ModelRepositoris ed243ModelRepositoris;
+
     @Test
-    public void sendУВ243() {
+    public void sendED243() {
         grateED243();
         ed201=vcControl.performСontrol(ed243);
         if(ed201!=null)
@@ -46,7 +47,8 @@ class SendED243 {
     }
 
     private void grateED243() {
-        ed243=new ED243(31052022,659,654,5);
+        ed243=new ED243(31052022,edAuthor1,edReceiver1,5,delivered);
+        ed243ModelRepositoris.save(ed243);
     }
 
     private boolean getStatusDelivered() {

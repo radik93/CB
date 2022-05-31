@@ -24,10 +24,20 @@ public class ED208 {
     @Column(name = "resultCode")
     private int ctrlCode;
 
+    public ED208() {
+
+    }
     public ED208(int edDate, int ctrlCode, ED243 ed243) {
         this.edDate = edDate;
         this.ctrlCode=ctrlCode;
         this.edAuthor=ed243.getEdAuthor();
         this.edReceiver=ed243.getEdReceiver();
+    }
+
+    public ED208(int edDate, int ctrlCode, ED244 ed244) {
+        this.edDate = edDate;
+        this.ctrlCode=ctrlCode;
+        this.edAuthor=ed244.getEdAuthor();
+        this.edReceiver=ed244.getEdReceiver();
     }
 }

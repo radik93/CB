@@ -40,13 +40,10 @@ class DemoApplicationTests {
 
     int edReceiver2  = 659;
 
-    ED243 ed243;
 
     @Autowired
     AddClient addClient;
 
-    @Autowired
-    VCControl vcControl;
 
     public void grateClient() {
         client1=new Client(comName1,INN1,PS1,BIK1,edReceiver1);
@@ -62,10 +59,7 @@ class DemoApplicationTests {
         addClient.addNewClient(client2);
     }
 
-    @Test
-    public void sendУВ243() {
-        ED201 ed201=vcControl.performСontrol(ed243);
-    }
+
 
 
 }

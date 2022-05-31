@@ -6,10 +6,9 @@ import ru.cb.demo.interfaces.VCControl;
 import ru.cb.demo.interfaces.grud.ClientModelsRepositoris;
 import ru.cb.demo.interfaces.grud.ED201ModelRepositoris;
 import ru.cb.demo.interfaces.grud.ED208ModelRepositoris;
-import ru.cb.demo.models.Client;
-import ru.cb.demo.models.ED201;
-import ru.cb.demo.models.ED208;
-import ru.cb.demo.models.ED243;
+import ru.cb.demo.interfaces.grud.ED243ModelRepositoris;
+import ru.cb.demo.models.*;
+import ru.cb.demo.utils.CodeAck;
 
 import java.util.List;
 
@@ -25,11 +24,13 @@ public class VCControlImpl implements VCControl {
     @Autowired
     ED208ModelRepositoris ed208ModelRepositoris;
 
+    @Autowired
+    ED243ModelRepositoris ed243ModelRepositoris;
+
     @Override
     public ED201 performСontrol(ED243 ed243) {
         List<Client> clientList=clientModelsRepositoris.findClientsByEdReceiver(ed243.getEdReceiver());
 
-        System.out.println(clientList.size());
         //если не найден клиент с УИП то ошибка
         if (clientList.size()==0)
         {
@@ -53,4 +54,37 @@ public class VCControlImpl implements VCControl {
         ed208ModelRepositoris.save(ed208);
         return ed208;
     }
+
+    @Override
+    public ED208 performСontrol244(ED244 ed244) {
+        List<Client> clientList=clientModelsRepositoris.findClientsByEdReceiver(ed244.getEdAuthor());
+        if (clientList.size()==0)
+        {
+            ED208 ed208 = new ED208(31052022,1,ed244);
+            ed208ModelRepositoris.save(ed208);
+            return ed208;
+        }
+        return null;
+    }
+
+//    @Override
+//    public List<ED243> getED243(int edReceiver) {
+//        return ed243ModelRepositoris.findED243sByEdReceiverAndAnAnswerFalse(edReceiver);
+//
+//    }
+
+    @Override
+    public ED208 successСontrol244(ED244 ed244, boolean delivered) {
+        int ctrlCode;
+        if(delivered)
+            ctrlCode= 2;
+        else
+            ctrlCode= 3;
+        ED208 ed208 = new ED208(31052022,ctrlCode,ed244);
+
+        ed208ModelRepositoris.save(ed208);
+        return ed208;
+    }
+
+
 }

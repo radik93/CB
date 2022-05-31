@@ -38,8 +38,4 @@ public class ED201 {
         this.edAuthor=ed244.getEdAuthor();
         this.edReceiver=ed244.getEdReceiver();
     }
-
-    //@ManyToOne(targetEntity=ED243.class)
-    //@JoinColumn(name="ed243_id")
-    //ED243 ed243;
 }

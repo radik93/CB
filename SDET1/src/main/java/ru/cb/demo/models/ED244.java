@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Getter
@@ -24,10 +25,36 @@ public class ED244 {
     private int edReceiver;
     @Column(name = "requestCode")
     private int requestCode;
-    @Column(name = "ackCode")
-    private int ackCode;
+    @Column(name = "EDDefineRequestCode")
+    private int EDDefineRequestCode;
 
-   // @OneToOne(cascade = {CascadeType.ALL})
-   // @JoinColumn(name = "requestCode")
-   // private ED243 ed243;
+    @OneToMany(targetEntity=ED108.class,
+            fetch = FetchType.EAGER)
+    @JoinColumn(name="ed244_edho")
+    private List<ED108> ED108s;
+
+    public ED244(int edDate, int EDDefineRequestCode, ED243 ed243) {
+        this.edDate              = edDate;
+        this.EDDefineRequestCode = EDDefineRequestCode;
+        this.requestCode         = ed243.getRequestCode();
+        this.edAuthor            = ed243.getEdAuthor();
+        this.edReceiver          = ed243.getEdReceiver();
+    }
+
+    public ED244(int edDate, int EDDefineRequestCode, int edReceiver, int edAuthor) {
+        this.edDate              = edDate;
+        this.edAuthor            = edAuthor;
+        this.EDDefineRequestCode = EDDefineRequestCode;
+        this.edReceiver          = edReceiver;
+    }
+
+    public ED244() {
+
+    }
+
+//    @Override
+//    public boolean equals(Object obj) {
+//        ED244 ed244 = (ED244) obj;
+//        return ((this.edAuthor == ed244.edAuthor)&& (this.edReceiver == ed244.edReceiver));
+//    }
 }
