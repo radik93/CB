@@ -7,11 +7,13 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import ru.cb.demo.interfaces.AddClient;
-import ru.cb.demo.interfaces.VCControl;
 import ru.cb.demo.models.Client;
-import ru.cb.demo.models.ED201;
-import ru.cb.demo.models.ED243;
 
+/*
+ * Тестируем создание клиентов
+ * @author radik
+ * @version 1.0
+ */
 @SpringBootTest
 class DemoApplicationTests {
 

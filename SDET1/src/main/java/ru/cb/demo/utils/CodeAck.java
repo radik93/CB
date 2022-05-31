@@ -1,5 +1,10 @@
 package ru.cb.demo.utils;
 
+/*
+ * Утилита для конвертации описания запроса в цифровой код
+ * @author radik
+ * @version 1.0
+ */
 public class CodeAck {
 
     private static final String[] discСode  = {"Ошибка провеки",

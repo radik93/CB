@@ -51,10 +51,4 @@ public class ED244 {
     public ED244() {
 
     }
-
-//    @Override
-//    public boolean equals(Object obj) {
-//        ED244 ed244 = (ED244) obj;
-//        return ((this.edAuthor == ed244.edAuthor)&& (this.edReceiver == ed244.edReceiver));
-//    }
 }

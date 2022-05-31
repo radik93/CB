@@ -12,7 +12,11 @@ import javax.persistence.*;
 public class ED108 {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @Column(name = "ecno")
+    private int ecno;
 
     @Column(name = "INN")
     private int INN;
@@ -32,8 +36,8 @@ public class ED108 {
 
     }
 
-    public ED108(Long id,int BIK, int INN, int PS, int SUM) {
-        this.id = id;
+    public ED108(int ecno,int BIK, int INN, int PS, int SUM) {
+        this.ecno = ecno;
         this.BIK = BIK;
         this.INN = INN;
         this.PS = PS;

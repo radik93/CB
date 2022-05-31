@@ -3,12 +3,9 @@ package ru.cb.demo.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.cb.demo.interfaces.VCControl;
-import ru.cb.demo.interfaces.grud.ClientModelsRepositoris;
-import ru.cb.demo.interfaces.grud.ED201ModelRepositoris;
-import ru.cb.demo.interfaces.grud.ED208ModelRepositoris;
-import ru.cb.demo.interfaces.grud.ED243ModelRepositoris;
+import ru.cb.demo.interfaces.grud.*;
 import ru.cb.demo.models.*;
-import ru.cb.demo.utils.CodeAck;
+
 
 import java.util.List;
 
@@ -66,12 +63,6 @@ public class VCControlImpl implements VCControl {
         }
         return null;
     }
-
-//    @Override
-//    public List<ED243> getED243(int edReceiver) {
-//        return ed243ModelRepositoris.findED243sByEdReceiverAndAnAnswerFalse(edReceiver);
-//
-//    }
 
     @Override
     public ED208 successСontrol244(ED244 ed244, boolean delivered) {

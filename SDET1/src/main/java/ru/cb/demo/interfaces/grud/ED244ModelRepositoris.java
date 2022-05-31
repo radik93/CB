@@ -4,9 +4,12 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import ru.cb.demo.models.ED244;
 
-import java.util.List;
-
+/*
+ * Интерфейс для работы с таблицей БД ED244
+ * данная таблица содержит списко форм ED244
+ * @author radik
+ * @version 1.0
+ */
 @Repository
 public interface ED244ModelRepositoris extends CrudRepository<ED244,Long> {
-    List<ED244> findFirstByEdReceiverAndEdAuthor(int edReceiver, int edAuthor);
 }
